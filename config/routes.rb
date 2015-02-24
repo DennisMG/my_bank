@@ -13,7 +13,9 @@ MyBank::Application.routes.draw do
   resources :bank_accounts, only: [:index, :new, :create, :show] do
     resources :transactions, shallow: true
     get "report", on: :member
-    get "stadistics", on: :collection
+    get "statistics", on: :collection
+    get "deposit", on: :member
+    get "retire", on: :member
   end
 
   # Example of regular route:

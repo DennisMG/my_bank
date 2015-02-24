@@ -1,0 +1,17 @@
+= form_for [bank_account, transaction] do |f|
+  .field
+    = f.label :amount
+    = f.text_field :amount
+  .field
+    = f.label :responsible
+    = f.text_field :responsible
+  .field
+    = f.label :description, "description"
+    = f.text_field :description
+
+  .field
+    = f.hidden_field :is_deposit
+    = f.submit is_deposit ? "Depositar", "Retirar" :is_deposit
+    
+  .actions
+    = f.submit
